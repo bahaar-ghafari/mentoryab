@@ -18,3 +18,19 @@ We use Atomic Design:
 - **assets/**: Images & media
 - **styles/**: CSS/Tailwind configs
 - **services/**: API handlers
+
+
+## Redux Integration
+
+This project uses Redux Toolkit for state management.
+
+### Installation
+
+To install the necessary packages, run:
+
+```bash
+npm install @reduxjs/toolkit react-redux
+
+or
+
+yarn add @reduxjs/toolkit react-redux
