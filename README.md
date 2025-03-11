@@ -18,3 +18,10 @@ We use Atomic Design:
 - **assets/**: Images & media
 - **styles/**: CSS/Tailwind configs
 - **services/**: API handlers
+
+### Installation
+
+To install the necessary packages, run:
+
+```bash
+npm install
