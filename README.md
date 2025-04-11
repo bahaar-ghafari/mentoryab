@@ -20,10 +20,6 @@ We use Atomic Design:
 - **services/**: API handlers
 
 
-# Fetching Data
-
-In this project, we use **React Query** for efficient data fetching, caching, and background updates. React Query is a powerful library that simplifies data fetching and state management in React applications. Instead of manually handling API requests, loading states, and caching, React Query does all of this automatically.
-
 
 # Unit Test
 
