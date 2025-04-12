@@ -17,6 +17,7 @@ We use Atomic Design:
 - **utils/**: Utility functions
 - **assets/**: Images & media
 - **styles/**: CSS/Tailwind configs
+- **services/**: API handlers
 - **store/**: Redux store
 
 
