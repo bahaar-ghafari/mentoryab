@@ -19,6 +19,10 @@ We use Atomic Design:
 - **styles/**: CSS/Tailwind configs
 - **services/**: API handlers
 
+# Fetching Data
+
+In this project, we use **React Query** for efficient data fetching, caching, and background updates.
+React Query simplifies data fetching and caching in React apps, reducing the need for manual state handling.
 
 
 # Unit Test
