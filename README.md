@@ -17,7 +17,7 @@ We use Atomic Design:
 - **utils/**: Utility functions
 - **assets/**: Images & media
 - **styles/**: CSS/Tailwind configs
-- **services/**: API handlers
+- **store/**: Redux store
 
 
 
@@ -26,6 +26,7 @@ We use Atomic Design:
 Unit testing is the process of testing individual components of the code (like functions or methods) to ensure they work as expected. It helps catch bugs early, improves code quality, and makes future changes safer.
 
 
+Mentoryab uses **Tailwind CSS**, **Material UI**, and **Styled Components** to create a highly flexible and responsive UI for building web applications.
 
 
 
