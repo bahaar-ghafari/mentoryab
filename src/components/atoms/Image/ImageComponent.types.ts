@@ -1,11 +1,7 @@
-import React from "react";
+import React, { ComponentProps, JSX } from "react";
+import Image from "next/image";
 
-export type ImageProps = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
+export type ImageProps = ComponentProps<typeof Image> & {
   fallbackIcon?: React.ReactNode;
-  priority?: boolean;
-}
+  fallbackWrapperTag?: keyof JSX.IntrinsicElements;
+};
