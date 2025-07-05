@@ -7,7 +7,7 @@ const defaultLocale = 'fa';
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // اجازه به فایل‌های public مثل images, .js, .css
+ // Allow requests to public files such as images, JavaScript, CSS, etc.
   if (
     PUBLIC_FILE.test(pathname) ||
     pathname.startsWith('/api') ||
@@ -16,25 +16,25 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // اگر آدرس شامل زبان بود، ادامه بده
+ // If the pathname already includes a supported locale, continue without redirect
   if (locales.some((locale) => pathname.startsWith(`/${locale}`))) {
     return NextResponse.next();
   }
 
-  // تشخیص زبان مرورگر
+ // Detect browser language from Accept-Language header
   const acceptLang = req.headers.get('accept-language');
   const preferredLang = acceptLang?.split(',')[0].split('-')[0];
   const detectedLang = locales.includes(preferredLang || '')
     ? preferredLang
     : defaultLocale;
 
-  // ریدایرکت به زبان مناسب
+  // Redirect to the same path prefixed with the detected language
   return NextResponse.redirect(new URL(`/${detectedLang}${pathname}`, req.url));
 }
 
 export const config = {
   matcher: [
-   
+     // Exclude static files, public assets, and API routes from middleware processing
     '/((?!_next/static|_next/image|favicon.ico|locales|.*\\..*).*)',
   ],
 };
