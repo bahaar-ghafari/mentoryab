@@ -19,13 +19,14 @@ export const metadata: Metadata = {
 
 import QueryProvider from "../lib/QueryProvider";
 
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
