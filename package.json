@@ -20,8 +20,10 @@
     "i18next-http-backend": "^3.0.2",
 >>>>>>> Stashed changes
     "next": "15.2.2",
+    "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-i18next": "^15.5.2",
     "react-redux": "^9.2.0",
     "styled-components": "^6.1.17",
     "tailwind-merge": "^3.3.1"
