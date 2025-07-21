@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 
 import QueryProvider from "../lib/QueryProvider";
 
-
 export default function RootLayout({
   children,
 }: {
