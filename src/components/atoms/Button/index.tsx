@@ -13,7 +13,7 @@ type ButtonProps = {
   size?: "sm" | "md" | "lg";
 };
 
-const Button: React.FC<ButtonProps> = ({
+const CustomButton: React.FC<ButtonProps> = ({
   children,
   variant = "solid",
   disabled = false,
@@ -22,24 +22,27 @@ const Button: React.FC<ButtonProps> = ({
   iconPosition = "left",
   size = "md",
 }) => {
+  const isDisabled = disabled || loading;
   const baseClasses =
-    "inline-flex items-center justify-center px-4 py-2 rounded-md font-medium ";
+    "inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors";
   const sizeClasses =
     size === "sm"
       ? "px-3 py-1 text-sm"
       : size === "lg"
         ? "px-5 py-3 text-lg"
         : "px-4 py-2 text-base";
-  const variantClasses = disabled
+  const variantClasses = isDisabled
     ? "bg-gray-300 text-gray-500 border border-gray-300 cursor-not-allowed"
     : variant === "solid"
-      ? "bg-green-500 text-white hover:bg-green-700"
-      : // "border border-green-500 text-green-500 hover:bg-green-50"
-        variant === "Hovered"
-        ? "bg-green-700 text-white"
-        : "border border-green-500 text-green-500";
-  const isDisabled = disabled;
-  const classes = `${baseClasses} ${sizeClasses} ${variantClasses} ${
+      ? "bg-green-500 text-white"
+      : "border border-green-500 text-green-500";
+  const hoverClasses = isDisabled
+    ? ""
+    : variant === "solid"
+      ? "hover:bg-green-700"
+      : "hover:bg-green-50";
+
+  const classes = `${baseClasses} ${sizeClasses} ${variantClasses} ${hoverClasses} ${
     loading ? "opacity-50 cursor-not-allowed" : ""
   }`;
 
@@ -58,4 +61,4 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-export default Button;
+export default CustomButton;
