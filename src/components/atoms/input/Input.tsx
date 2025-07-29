@@ -1,8 +1,17 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { cn } from '@/utils/cn'
-import { InputProps } from '@/components/atoms/input/Input.types'
+import React from 'react';
+import { cn } from '@/utils/cn';
+
+type InputProps = {
+  placeholder?: string;
+  type?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+};
 
 const Input: React.FC<InputProps> = ({
   placeholder = '',
@@ -11,7 +20,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   className = '',
   icon,
-  disabled = false
+  disabled = false,
 }) => {
   return (
     <div className="relative w-full">
@@ -42,7 +51,7 @@ const Input: React.FC<InputProps> = ({
         )}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
