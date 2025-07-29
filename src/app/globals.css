@@ -1,6 +1,4 @@
-/** @format */
-
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
   font-family: var(--font-geist-sans);
