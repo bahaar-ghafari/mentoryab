@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+html {
+  font-family: var(--font-geist-sans);
+}
 @theme {
   --color-primary-main: #58a6ff;
   --color-primary-dark: #4fc3f7;
