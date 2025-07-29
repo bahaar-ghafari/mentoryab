@@ -1,7 +1,7 @@
 'use client';
 
-import { useTranslation } from "react-i18next";
-import "../../lib/i18n";
+import { useTranslation } from 'react-i18next';
+import '../../lib/i18n';
 import { useEffect, useState } from 'react';
 import Input from "@/components/atoms/input/Input";
 
@@ -9,7 +9,6 @@ export default function Home({ params }: { params: { lng: string } }) {
   const { t, i18n } = useTranslation();
   const [ready, setReady] = useState(false);
   const direction = params.lng === 'fa' ? 'rtl' : 'ltr';
-
 
   useEffect(() => {
     const changeLang = async () => {
@@ -23,13 +22,7 @@ export default function Home({ params }: { params: { lng: string } }) {
 
   if (!ready) return null;
 
-
-  console.log("lang:", i18n.language);
-
-  const handleSearch = (value: string) => {
-    console.log("Search input:", value);
-  };
-  console.log(t("app_title"));
+  console.log('lang:', i18n.language);
 
   return (
     <div

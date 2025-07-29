@@ -5,7 +5,6 @@ const config: UserConfig = {
     defaultLocale: 'fa',
     locales: ['fa', 'en'],
   },
-
 };
 
 export default config;
