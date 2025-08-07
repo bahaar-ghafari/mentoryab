@@ -18,3 +18,7 @@
   --color-secondary-text: #7a7a7a;
   --color-btn: #4d0082;
 }
+
+.error {
+  @apply ring-2 border-[var(--color-error-main)] ring-[var(--color-error-main)] focus:ring-[var(--color-error-main)] text-[var(--color-error-main)];
+}
