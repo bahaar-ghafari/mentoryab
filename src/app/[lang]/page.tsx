@@ -23,11 +23,6 @@ export default function Home({ params }: { params: { lng: string } }) {
 
   console.log('lang:', i18n.language);
 
-  const handleSearch = (value: string) => {
-    console.log('Search input:', value);
-  };
-  console.log(t('app_title'));
-
   return (
     <div
       dir={direction}
