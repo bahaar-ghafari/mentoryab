@@ -17,27 +17,19 @@ export const Image: React.FC<ImageProps> = ({
     return (
       <div
         className={cn(
-          'flex flex-col items-center justify-center gap-1 bg-gray-100 text-gray-500 size-full',
+          'flex flex-col items-center justify-center gap-1 bg-gray-100 text-gray-500',
           className
         )}
-      >
-        <span className="text-sm">تصویر یافت نشد</span>
-        <code className="text-[10px] font-mono break-all max-w-48 opacity-70">
-          {String(src)}
-        </code>
-      </div>
+      />
     );
   }
 
   return (
-    <>
+    <div className={cn('relative overflow-hidden', className)}>
       {!loaded && (
-        <div
-          className={cn(
-            'absolute bg-gray-300 opacity-100 animate-pulse size-full'
-          )}
-        />
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
       )}
+
       <NextImage
         src={src}
         alt={alt}
@@ -47,9 +39,18 @@ export const Image: React.FC<ImageProps> = ({
           'object-cover object-center transition-opacity duration-500',
           loaded ? 'opacity-100' : 'opacity-0'
         )}
-        onError={() => setHasError(true)}
+        onError={() => {
+          setHasError(true);
+          console.error('Next/Image failed to load:', {
+            src,
+            alt,
+            page:
+              typeof window !== 'undefined' ? window.location.pathname : 'SSR',
+            timestamp: new Date().toISOString(),
+          });
+        }}
         {...rest}
       />
-    </>
+    </div>
   );
 };

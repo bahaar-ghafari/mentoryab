@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import '../../lib/i18n';
 import { useEffect, useState } from 'react';
+import { Image } from '@/components/atoms/image/Image';
 
 export default function Home({ params }: { params: { lng: string } }) {
   const { t, i18n } = useTranslation();
@@ -26,9 +27,14 @@ export default function Home({ params }: { params: { lng: string } }) {
   return (
     <div
       dir={direction}
-      className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
+      className="grid min-h-screen min-w-screen justify-center p-8"
     >
-      <h1 className="text-3xl font-bold">{t('app_title')}</h1>
+      <h1 className="text-3xl font-bold text-center">{t('app_title')}</h1>
+      <Image
+        src="/Image2.png"
+        alt="test image"
+        className="h-[200px] w-[600px] rounded-2xl"
+      />
     </div>
   );
 }
