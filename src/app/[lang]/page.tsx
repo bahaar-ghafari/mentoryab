@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import '../../lib/i18n';
 import { useEffect, useState } from 'react';
+import Button from '@/components/atoms/button/button';
 
 export default function Home({ params }: { params: { lng: string } }) {
   const { t, i18n } = useTranslation();
@@ -29,6 +30,7 @@ export default function Home({ params }: { params: { lng: string } }) {
       className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"
     >
       <h1 className="text-3xl font-bold">{t('app_title')}</h1>
+      <Button>54</Button>
     </div>
   );
 }
