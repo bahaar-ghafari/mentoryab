@@ -1,1 +1,0 @@
-//TODO: tab switcher component
