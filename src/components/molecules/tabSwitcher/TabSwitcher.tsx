@@ -1,15 +1,16 @@
 import React from 'react';
-import Tab from '@mui/material/Tab';
 import Tabs from '../../atoms/tabs/Tabs';
+import Tab from '../../atoms/tab/Tab';
+import type { TabKey } from '../heroContent/HeroContent';
 
 type TabSwitcherProps = {
-  value: 'mentee' | 'mentor';
-  onChange: (event: React.SyntheticEvent, newValue: string | number) => void;
+  value: TabKey;
+  onChange: (event: React.SyntheticEvent, newValue: TabKey) => void;
 };
 
 const TabSwitcher = ({ value, onChange }: TabSwitcherProps) => {
   return (
-    <Tabs value={value} onChange={onChange}>
+    <Tabs value={value} onChange={(e, v) => onChange(e, v as TabKey)}>
       <Tab value="mentee" label="Mentee" />
       <Tab value="mentor" label="Mentor" />
     </Tabs>
