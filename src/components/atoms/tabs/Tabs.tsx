@@ -4,16 +4,17 @@ type TabsProps = {
   value: string | number;
   onChange: (event: React.SyntheticEvent, newValue: string | number) => void;
   children: React.ReactNode;
+  ariaLabel?: string;
 };
 
-const Tabs = ({ value, onChange, children }: TabsProps) => {
+const Tabs = ({ value, onChange, children, ariaLabel }: TabsProps) => {
   return (
     <MUITabs
       value={value}
       onChange={onChange}
       textColor="secondary"
       indicatorColor="secondary"
-      aria-label="mentee mentor tabs"
+      aria-label={ariaLabel}
     >
       {children}
     </MUITabs>

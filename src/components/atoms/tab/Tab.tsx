@@ -3,7 +3,7 @@
 import { Tab as MUITab } from '@mui/material';
 
 type TabProps = {
-  value: 'mentee' | 'mentor';
+  value: string | number;
   label: string;
 };
 

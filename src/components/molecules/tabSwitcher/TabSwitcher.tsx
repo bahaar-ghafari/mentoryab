@@ -10,7 +10,11 @@ type TabSwitcherProps = {
 
 const TabSwitcher = ({ value, onChange }: TabSwitcherProps) => {
   return (
-    <Tabs value={value} onChange={(e, v) => onChange(e, v as TabKey)}>
+    <Tabs
+      value={value}
+      onChange={(e, v) => onChange(e, v as TabKey)}
+      ariaLabel="mentee mentor tabs"
+    >
       <Tab value="mentee" label="Mentee" />
       <Tab value="mentor" label="Mentor" />
     </Tabs>
